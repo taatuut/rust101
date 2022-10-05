@@ -3,13 +3,16 @@ First steps with rust
 
 https://www.rust-lang.org/learn/get-started
 
+```
 brew install rust
 mkdir ~/rust
 cd ~/rust
 cargo new hello-rust
 
    Created binary (application) `hello-rust` package
+```
 
+```
 cd hello-rust
 ls
 
@@ -17,13 +20,17 @@ ls
     Finished dev [unoptimized + debuginfo] target(s) in 8.12s
      Running `target/debug/hello-rust`
 Hello, world!
+```
 
-vi Cargo.toml
+`vi Cargo.toml`
 
 Add:
+```
 [dependencies]
 ferris-says = "0.2"
+```
 
+```
 cargo build
 
     Updating crates.io index
@@ -40,12 +47,15 @@ cargo build
    Compiling ferris-says v0.2.1
    Compiling hello-rust v0.1.0 (/Users/emilzegers/rust/hello-rust)
     Finished dev [unoptimized + debuginfo] target(s) in 1m 12s
+```
 
+```
 cd src
-
 mv main.rs hello.rs
 vi main.rs
+```
 
+```
 use ferris_says::say; // from the previous step
 use std::io::{stdout, BufWriter};
 
@@ -57,7 +67,9 @@ fn main() {
     let mut writer = BufWriter::new(stdout.lock());
     say(message.as_bytes(), width, &mut writer).unwrap();
 }
+```
 
+```
 cargo run
    Compiling hello-rust v0.1.0 (/Users/emilzegers/rust/hello-rust)
     Finished dev [unoptimized + debuginfo] target(s) in 2.16s
@@ -71,6 +83,7 @@ cargo run
         \) /  o o  \ (/
           '_   -   _'
           / '-----' \
+```
 
 https://stevedonovan.github.io/rust-gentle-intro/
 
